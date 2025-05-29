@@ -1,0 +1,29 @@
+@import '../../styles/colors.scss'; // importa variáveis scss
+
+.nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $primary;
+  border-top: 40px solid $primaryDark;
+  padding: 1rem 0;
+}
+
+.nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  color: $white;
+  cursor: pointer;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
