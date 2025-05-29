@@ -18,12 +18,54 @@ const Title = styled.h1`
   color: #333;
 `;
 
-const Result = styled.pre`
-  margin-top: 1rem;
+const TextArea = styled.textarea`
+  width: 100%;
+  min-height: 20px;
   padding: 1rem;
-  background: #f0f0f0;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  overflow-x: auto;
+  font-size: 1rem;
+  font-family: monospace;
+  background: #f0f0f0;
+  resize: vertical;
+`;
+
+
+const CopyButton = styled.button`
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+`;
+
+const TextAreaWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  margin: 1rem auto; /* <-- Centraliza horizontalmente */
+  
+  @media (max-width: 700px) {
+    max-width: 260px;
+  }
+
+  @media (min-width: 701px) {
+    max-width: 600px;
+  }
+`;
+
+const CenteredRow = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
 `;
 
 export default function Login() {
@@ -45,6 +87,14 @@ export default function Login() {
       setError('Failed to login. Please try again.');
       setJwe('');
     }
+  };
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Texto copiado com sucesso!');
+    }).catch((err) => {
+      console.error('Erro ao copiar:', err);
+    });
   };
 
   return (
@@ -70,10 +120,15 @@ export default function Login() {
 
       {jwe && (
         <>
-          <Result>{jwe}</Result>
-          <FormButton onClick={() => router.push('/decrypt')}>
-            Go to Decrypt
-          </FormButton>
+          <CenteredRow>
+            <TextAreaWrapper>
+              <TextArea value={jwe} readOnly rows={12} />
+              <CopyButton onClick={() => copyToClipboard(jwe)}>📋 Copy</CopyButton>
+              {/* <FormButton onClick={() => router.push('/decrypt')}>
+                Go to Decrypt
+              </FormButton> */}
+            </TextAreaWrapper>
+          </CenteredRow>
         </>
       )}
     </Container>
