@@ -1,0 +1,39 @@
+@import '../styles/colors.scss';
+
+.container {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 1rem;
+
+  h1 {
+    color: $primaryDark;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin: 1rem 0;
+
+    a {
+      color: $primary;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 1.1rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

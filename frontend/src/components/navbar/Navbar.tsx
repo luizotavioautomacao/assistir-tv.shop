@@ -8,7 +8,8 @@ export const Navbar: React.FC = () => {
   return (
     <nav className={styles.nav}>
       <ul>
-        <li className={styles.navItem} onClick={() => router.push('/')}>Login</li>
+        <li className={styles.navItem} onClick={() => router.push('/')}>Home</li>
+        <li className={styles.navItem} onClick={() => router.push('/login')}>Login</li>
         <li className={styles.navItem} onClick={() => router.push('/decrypt')}>Decrypt</li>
         <li className={styles.navItem} onClick={() => router.push('/history')}>History</li>
       </ul>

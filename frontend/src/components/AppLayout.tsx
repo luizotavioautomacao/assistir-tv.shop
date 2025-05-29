@@ -11,7 +11,7 @@ const AppLayout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      <main style={{ flex: 1 }}>{children}</main>
       <Footer></Footer>
     </>
   );
