@@ -32,9 +32,8 @@ const TextArea = styled.textarea`
 
 
 const CopyButton = styled.button`
-  position: absolute;
-  top: 8px;
-  right: 8px;
+  align-self: flex-end;
+  margin-bottom: 0.25rem;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -49,10 +48,12 @@ const CopyButton = styled.button`
 `;
 
 const TextAreaWrapper = styled.div`
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   width: 100%;
-  margin: 1rem auto; /* <-- Centraliza horizontalmente */
-  
+  margin: 1rem auto;
+
   @media (max-width: 700px) {
     max-width: 260px;
   }
@@ -60,12 +61,6 @@ const TextAreaWrapper = styled.div`
   @media (min-width: 701px) {
     max-width: 600px;
   }
-`;
-
-const CenteredRow = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
 `;
 
 export default function Login() {
@@ -98,39 +93,39 @@ export default function Login() {
   };
 
   return (
-    <Container>
-      <Title>Login</Title>
-      <Form onSubmit={handleSubmit}>
-        <FormInput
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-        />
-        <FormInput
-          type="password"
-          name="password"
-          placeholder="Password"
-          required
-        />
-        <FormButton>Login</FormButton>
-      </Form>
+    <>
+        <Container>
+          <Title>Login</Title>
+          <Form onSubmit={handleSubmit}>
+            <FormInput
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <FormInput
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <FormButton>Login</FormButton>
+          </Form>
 
-      {error && <div style={{ color: 'red', marginTop: '1rem' }}>{error}</div>}
+          {error && <div style={{ color: 'red', marginTop: '1rem' }}>{error}</div>}
 
-      {jwe && (
-        <>
-          <CenteredRow>
-            <TextAreaWrapper>
-              <TextArea value={jwe} readOnly rows={12} />
-              <CopyButton onClick={() => copyToClipboard(jwe)}>📋 Copy</CopyButton>
-              {/* <FormButton onClick={() => router.push('/decrypt')}>
-                Go to Decrypt
-              </FormButton> */}
-            </TextAreaWrapper>
-          </CenteredRow>
-        </>
-      )}
-    </Container>
+          {jwe && (
+            <>
+                <TextAreaWrapper>
+                  <CopyButton onClick={() => copyToClipboard(jwe)}>📋 Copy</CopyButton>
+                  <TextArea value={jwe} readOnly rows={12} />
+                  {/* <FormButton onClick={() => router.push('/decrypt')}>
+                    Go to Decrypt
+                  </FormButton> */}
+                </TextAreaWrapper>
+            </>
+          )}
+        </Container>
+    </>
   );
 } 
