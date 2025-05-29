@@ -11,9 +11,10 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const configService = app.get(ConfigService);
-  const port = configService.get<number>('BACKEND_PORT');
+  const BACKEND_PORT = configService.get<number>('BACKEND_PORT');
+  const FRONTEND_PORT = configService.get<number>('FRONTEND_PORT');
 
-  if (!port) {
+  if (!BACKEND_PORT) {
     logger.warn('⚠️ BACKEND_PORT não foi definido no arquivo .env!');
   }
 
@@ -27,7 +28,13 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  await app.listen(port);
-  console.log(`🚀 Application is running on: http://localhost:${port}`);
+   app.enableCors({
+    // origin: `http://localhost:${FRONTEND_PORT}`, 
+    origin: '*', // qualquer requisição
+    credentials: true,
+  });
+
+  await app.listen(BACKEND_PORT);
+  console.log(`🚀 Application is running on: http://localhost:${BACKEND_PORT}`);
 }
 bootstrap();
