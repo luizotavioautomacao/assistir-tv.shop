@@ -1,13 +1,13 @@
-## Resumo visual do JWE (JSON Web Encryption)
-               🔐 JWE (JSON Web Encryption)
+## Resumo visual do JWE (JSON Web Encryption)  
+               🔐 JWE (JSON Web Encryption)  
 ╭──────────────────────────────────────────────╮
-│          payload (dados sensíveis)           │
+│          payload (dados sensíveis)           │  
 ╰──────────────────────────────────────────────╯
-                ⬇ criptografa com:
-    🔑 chave pública (encrypt)
-                ⬇
-           token JWE (string)
-                ⬇ descriptografa com:
-    🔐 chave privada (decrypt)
-                ⬇
-          🔄 payload original
+                ⬇ criptografa com:  
+    🔑 chave pública (encrypt)  
+                ⬇  
+           token JWE (string)  
+                ⬇ descriptografa com:  
+    🔐 chave privada (decrypt)  
+                ⬇  
+          🔄 payload original  

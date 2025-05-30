@@ -120,6 +120,9 @@ export default function Login() {
                   <CopyButton onClick={() => copyToClipboard(jwe)}>📋 Copy</CopyButton>
                   <TextArea value={jwe} readOnly rows={12} />
                 </TextAreaWrapper>
+                <FormButton onClick={() => router.push('/decrypt')}>
+                  Go to Decrypt
+                </FormButton>
             </>
           )}
         </Container>
