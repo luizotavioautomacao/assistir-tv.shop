@@ -11,9 +11,9 @@ services:
       - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_DATABASE=${DB_DATABASE}
-      - BACKEND_PORT=${BACKEND_PORT}
+      - NEST_PORT=${NEST_PORT}
     ports:
-      - "${BACKEND_PORT}:${BACKEND_PORT}"
+      - "${NEST_PORT}:${NEST_PORT}"
     depends_on:
       - postgres
 
