@@ -11,11 +11,11 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const configService = app.get(ConfigService);
-  const BACKEND_PORT = configService.get<number>('BACKEND_PORT');
-  const FRONTEND_PORT = configService.get<number>('FRONTEND_PORT');
+  const BACKEND_PORT = configService.get<number>('NEST_PORT');
+  const FRONTEND_PORT = configService.get<number>('NEXT_PORT');
 
   if (!BACKEND_PORT) {
-    logger.warn('⚠️ BACKEND_PORT não foi definido no arquivo .env!');
+    logger.warn('⚠️ NEST_PORT não foi definido no arquivo .env!');
   }
 
   const config = new DocumentBuilder()
@@ -29,7 +29,7 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
    app.enableCors({
-    // origin: `http://localhost:${FRONTEND_PORT}`, 
+    // origin: `http://localhost:${NEXT_PORT}`, 
     origin: '*', // qualquer requisição
     credentials: true,
   });

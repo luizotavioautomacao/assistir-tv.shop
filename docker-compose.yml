@@ -5,7 +5,7 @@ services:
     build: ./frontend
     env_file: .env
     ports:
-      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+      - "${NEXT_PORT}:${NEXT_PORT}"
     depends_on:
       - backend
     networks:
@@ -15,13 +15,13 @@ services:
     build: ./backend
     env_file: .env
     ports:
-      - "${BACKEND_PORT}:${BACKEND_PORT}"
+      - "${NEST_PORT}:${NEST_PORT}"
     environment:
       - DB_HOST=${DB_HOST}
       - DB_PORT=${DB_PORT}
+      - DB_DATABASE=${DB_DATABASE}
       - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
-      - DB_DATABASE=${DB_DATABASE}
     depends_on:
       - postgres
     networks:
@@ -32,9 +32,11 @@ services:
     ports:
       - "${DB_PORT}:${DB_PORT}"
     environment:
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - POSTGRES_DB=${DB_DATABASE}
       - POSTGRES_USER=${DB_USERNAME}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_DATABASE}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
