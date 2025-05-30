@@ -6,11 +6,16 @@ const FormContainer = styled.form`
   flex-direction: column;
   gap: 1rem;
   max-width: 400px;
+  min-width: 250px;
   margin: 0 auto;
   padding: 2rem;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 650px) {
+    min-width: 0;
+  }
 `;
 
 const Input = styled.input`
