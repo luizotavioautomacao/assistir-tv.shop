@@ -8,17 +8,26 @@
   background-color: $primary;
   border-top: 40px solid $primaryDark;
   padding: 1rem 0;
+  overflow-x: auto;
 }
 
 .nav ul {
   display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
+
+  scrollbar-width: none; // Firefox
+  &::-webkit-scrollbar {
+    display: none; // Chrome/Safari
+  }
 }
 
 .navItem {
+  white-space: nowrap;
   color: $white;
   cursor: pointer;
   font-weight: 500;
@@ -35,5 +44,25 @@
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+/* Desktop visível, mobile escondido por padrão */
+.desktop {
+  display: inline-block;
+}
+
+.mobile {
+  display: none;
+}
+
+/* Em telas menores, inverte: mostra mobile, esconde desktop */
+@media (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: inline-block;
   }
 }
