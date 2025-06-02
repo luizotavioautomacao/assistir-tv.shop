@@ -4,12 +4,11 @@ Este é um sistema de autenticação fullstack desenvolvido com NestJS (backend)
 
 ## Pomodoro
 [O projeto foi executado usando metodologia de Pomodoro](./docs/pomodoro.xls).  
-Isso quer dizer que a cada 1 hora é executado em média 2 Pomodoros focados.
-Os últimos Pomodoros tenho tentato colocar esse projeto em produção em uma EC2 no qual já tenho controle.
-O domínio é: [vivotv.shop](https://vivotv.shop) e redireciono para o EC2 que tenho controle.
-Porém ainda não consegui fazer o devido redirecionamento para ter mais de um projeto no mesmo EC2.
-No mundo da tecnologia, durante toda a minha jornada, posso afirmar que existem obstáculos temporários.
-Quando em uma determinada tarefa, começa a passar de alguns Pomodoros e essa tarefa não foi quebrada, e ainda continua na mesma tarefa, é um obstáculo temporário. (Em breve, coloco esse projeto em produção, quando eu remover o obstáculo temporário)  
+Isso quer dizer que a cada 1 hora é executado em média 2 Pomodoros focados.  
+O domínio do projeto é: [vivotv.shop](https://vivotv.shop).  
+No mundo da tecnologia, durante toda a minha jornada, posso afirmar que existem obstáculos temporários.  
+Quando uma determinada tarefa, começa a passar de alguns Pomodoros e essa tarefa não foi quebrada, e ainda continua na mesma tarefa, é um obstáculo temporário.   
+- Em breve, coloco esse projeto em produção, quando remover o obstáculo temporário (resolvido ✅)
 
 ## Requisitos
 
@@ -28,6 +27,7 @@ Quando em uma determinada tarefa, começa a passar de alguns Pomodoros e essa ta
 - Documentação Swagger
 
 ### Frontend
+- Tela de Home  
 - Tela de Login
 - Tela de Decriptação
 - Tela de Histórico
@@ -45,8 +45,13 @@ cd vivotv.shop
 docker-compose up --build
 ```
 
+2.1. Ou execute o projeto com Makefile: 
+```bash
+make up
+```
+
 3. Acesse as aplicações:
-- Frontend: http://localhost:3002
+- Frontend: http://localhost:3000
 - Backend API: http://localhost:3001
 - Swagger Documentation: http://localhost:3001/api
 
@@ -83,19 +88,24 @@ npm test
 ## Tecnologias Utilizadas
 
 - Backend:
+  - Node.js
   - NestJS
+  - Typescript
   - TypeORM
   - PostgreSQL
   - JWE (JSON Web Encryption)
   - Swagger
+  - Jest
 
 - Frontend:
+  - React
   - Next.js
   - TypeScript
-  - Styled Components
+  - Styled Components e Sass
   - Axios
+  - Jest
 
 ## Observações
-- As chaves de criptografia JWE são geradas automaticamente no ambiente de desenvolvimento
-- Em produção, as chaves devem ser configuradas via variáveis de ambiente 
-- O banco de dados PostgreSQL é persistido através de um volume Docker
+- As chaves de criptografia JWE são geradas automaticamente no ambiente de desenvolvimento ✅
+- O banco de dados PostgreSQL é persistido através de um volume Docker ✅
+- Em produção, as chaves deveriam ser configuradas via variáveis de ambiente (não realizado) ⚠️
