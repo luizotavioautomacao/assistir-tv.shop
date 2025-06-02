@@ -15,7 +15,7 @@ export const Navbar: React.FC = () => {
         <li className={`${styles.navItem} ${styles.desktop}`} onClick={() => router.push('/history')}>🔍 History</li>
         <li className={`${styles.navItem} ${styles.desktop}`} onClick={() => router.push('/api')}>📚 Swagger</li>
         {/* <li className={`${styles.navItem} ${styles.desktop}`}>
-          <a href="https://github.com/luizotavioautomacao/vivotv.shop" target="_blank" rel="noopener noreferrer" className={styles.link}>🧠 Repository</a>
+          <a href="https://github.com/luizotavioautomacao/assistir-tv.shop" target="_blank" rel="noopener noreferrer" className={styles.link}>🧠 Repository</a>
         </li> */}
 
         {/* Mobile version */}
@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
         <li className={`${styles.navItem} ${styles.mobile}`} onClick={() => router.push('/history')}>History</li>
         <li className={`${styles.navItem} ${styles.mobile}`} onClick={() => router.push('/api')}>Swagger</li>
         {/* <li className={`${styles.navItem} ${styles.mobile}`}>
-          <a href="https://github.com/luizotavioautomacao/vivotv.shop" target="_blank" rel="noopener noreferrer" className={styles.link}>Repo</a>
+          <a href="https://github.com/luizotavioautomacao/assistir-tv.shop" target="_blank" rel="noopener noreferrer" className={styles.link}>Repo</a>
         </li> */}
       </ul>
     </nav>
