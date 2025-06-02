@@ -26,7 +26,7 @@ async function bootstrap() {
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('docs', app, document);
 
    app.enableCors({
     origin: ['https://assistir-tv.shop', 'https://claro.assistir-tv.shop', 'https://landpage.website', 'https://vivotv.shop', `http://localhost:${FRONTEND_PORT}`],
