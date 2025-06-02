@@ -29,7 +29,7 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
    app.enableCors({
-    origin: ['https://assistir-tv.shop', 'https://landpage.website', 'https://vivotv.shop', `http://localhost:${FRONTEND_PORT}`],
+    origin: ['https://assistir-tv.shop', 'https://claro.assistir-tv.shop', 'https://landpage.website', 'https://vivotv.shop', `http://localhost:${FRONTEND_PORT}`],
     credentials: true,
   });
 

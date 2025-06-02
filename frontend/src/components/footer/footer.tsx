@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div>
-        {currentYear} © assistir-tv.shop | TV por assinatura.
+        {currentYear} © claro.assistir-tv.shop | TV por assinatura.
         <div style={{ marginTop: '0.3rem' }}>
           Desenvolvido por {' '}
           <a target="_self" href="https://luizotavio.netlify.app" className={styles.footerLink}>
