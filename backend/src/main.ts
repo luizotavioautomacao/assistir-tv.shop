@@ -29,8 +29,7 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
    app.enableCors({
-    // origin: `http://localhost:${NEXT_PORT}`, 
-    origin: '*', // qualquer requisição
+    origin: ['https://vivotv.shop', `http://localhost:${FRONTEND_PORT}`],
     credentials: true,
   });
 

@@ -18,6 +18,7 @@ const Title = styled.h1`
 
 const Table = styled.table`
   width: 100%;
+  min-width: 600px;
   max-width: 1200px;
   margin: 0 auto;
   background: white;
@@ -25,6 +26,27 @@ const Table = styled.table`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-collapse: collapse;
 `;
+
+const TableWrapper = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+  margin-bottom: 2rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #ccc transparent;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+  }
+`;
+
+
 
 const Th = styled.th`
   padding: 1rem;
@@ -44,6 +66,9 @@ const JweCell = styled(Td)`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  @media (max-width: 768px) {
+    max-width: 150px;
+  }
 `;
 
 export default function History() {
@@ -70,25 +95,26 @@ export default function History() {
       <Title>Login History</Title>
 
       {error && <div style={{ color: 'red', textAlign: 'center', marginBottom: '1rem' }}>{error}</div>}
-
-      <Table>
-        <thead>
-          <tr>
-            <Th>Email</Th>
-            <Th>Date</Th>
-            <Th>JWE</Th>
-          </tr>
-        </thead>
-        <tbody>
-          {history.map((item, index) => (
-            <tr key={index}>
-              <Td>{item.email}</Td>
-              <Td>{new Date(item.createdAt).toLocaleString()}</Td>
-              <JweCell title={item.jwe}>{item.jwe}</JweCell>
+      <TableWrapper>
+        <Table>
+          <thead>
+            <tr>
+              <Th>Email</Th>
+              <Th>Date</Th>
+              <Th>JWE</Th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {history.map((item, index) => (
+              <tr key={index}>
+                <Td>{item.email}</Td>
+                <Td>{new Date(item.createdAt).toLocaleString()}</Td>
+                <JweCell title={item.jwe}>{item.jwe}</JweCell>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </TableWrapper>
 
       <div style={{ textAlign: 'center', marginTop: '2rem' }}>
         <FormButton onClick={() => router.push('/')}>
