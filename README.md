@@ -1,4 +1,4 @@
-# Sistema de Autenticação Fullstack [assistir-tv.shop](https://assistir-tv.shop)  
+# Sistema de Autenticação Fullstack [claro.assistir-tv.shop](https://claro.assistir-tv.shop)  
 Este é um sistema de autenticação fullstack desenvolvido com NestJS (backend) e Next.js (frontend).  
 [Documento com teste](https://docs.google.com/document/d/1OpiMYAuz2sy0eG1xJVQRU_6y43z5KNv-/edit?usp=sharing&ouid=110746159081631494888&rtpof=true&sd=true)    
 
@@ -28,8 +28,8 @@ Este é um sistema de autenticação fullstack desenvolvido com NestJS (backend)
 
 1. Clone o repositório:
 ```bash
-git clone git@github.com:luizotavioautomacao/assistir-tv.shop.git
-cd assistir-tv.shop
+git clone git@github.com:luizotavioautomacao/claro.assistir-tv.shop.git
+cd claro.assistir-tv.shop
 ```
 
 2. Execute o projeto com Docker Compose:
@@ -109,7 +109,7 @@ npm test
 ### Pomodoro
 [O projeto foi executado usando metodologia de Pomodoro](./docs/pomodoro.xls).  
 Isso quer dizer que a cada 1 hora é executado em média 2 Pomodoros focados.  
-O domínio do projeto é: [assistir-tv.shop](https://assistir-tv.shop)   
+O domínio do projeto é: [claro.assistir-tv.shop](https://claro.assistir-tv.shop)   
 No mundo da tecnologia, durante toda a minha jornada, posso afirmar que existem obstáculos temporários.  
 Quando uma determinada tarefa, começa a passar de alguns Pomodoros e essa tarefa não foi quebrada, e ainda continua na mesma tarefa, é um obstáculo temporário.   
 - Em breve, coloco esse projeto em produção, quando remover o obstáculo temporário (resolvido ✅)

@@ -14,13 +14,13 @@ O objetivo de um módulo (@Module) no NestJS é organizar e agrupar:
 
 | PR  | Descrição | Link |
 |---- |-----------|------|
-| #1  | Inicialização do projeto com estrutura base | [Ver PR](https://github.com/luizotavioautomacao/assistir-tv.shop/pull/1) |
-| #2  | Implementação do Login com JWE | [Ver PR](https://github.com/luizotavioautomacao/assistir-tv.shop/pull/2) |
-| #3  | Tela de Decrypt com validação | [Ver PR](https://github.com/luizotavioautomacao/assistir-tv.shop/pull/3) |
-| #4  | Histórico de logins e navegação via Navbar | [Ver PR](https://github.com/luizotavioautomacao/assistir-tv.shop/pull/4) |
-| #5  | Estilização com SCSS e melhorias no Footer | [Ver PR](https://github.com/luizotavioautomacao/assistir-tv.shop/pull/5) |
-| #6  | Testes com React Testing Library | [Ver PR](https://github.com/luizotavioautomacao/assistir-tv.shop/pull/6) |
-| All | Todos os Pull Requests  | [Ver PRs](https://github.com/luizotavioautomacao/assistir-tv.shop/pulls?q=is%3Apr+is%3Aclosed) |
+| #1  | Inicialização do projeto com estrutura base | [Ver PR](https://github.com/luizotavioautomacao/claro.assistir-tv.shop/pull/1) |
+| #2  | Implementação do Login com JWE | [Ver PR](https://github.com/luizotavioautomacao/claro.assistir-tv.shop/pull/2) |
+| #3  | Tela de Decrypt com validação | [Ver PR](https://github.com/luizotavioautomacao/claro.assistir-tv.shop/pull/3) |
+| #4  | Histórico de logins e navegação via Navbar | [Ver PR](https://github.com/luizotavioautomacao/claro.assistir-tv.shop/pull/4) |
+| #5  | Estilização com SCSS e melhorias no Footer | [Ver PR](https://github.com/luizotavioautomacao/claro.assistir-tv.shop/pull/5) |
+| #6  | Testes com React Testing Library | [Ver PR](https://github.com/luizotavioautomacao/claro.assistir-tv.shop/pull/6) |
+| All | Todos os Pull Requests  | [Ver PRs](https://github.com/luizotavioautomacao/claro.assistir-tv.shop/pulls?q=is%3Apr+is%3Aclosed) |
 
 ---
 

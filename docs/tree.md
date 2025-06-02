@@ -1,4 +1,4 @@
-assistir-tv.shop/  
+claro.assistir-tv.shop/  
 ├── backend/  
 │   ├── src/  
 │   │   ├── auth/  
